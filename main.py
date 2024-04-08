@@ -14,10 +14,10 @@ def loop():
   while True:
     print('...relayd on')
     GPIO.output(firstM, GPIO.LOW)
-    time.sleep(0.5)
+    time.sleep(10)
     print('relay off...')
     GPIO.output(firstM, GPIO.HIGH)
-    time.sleep(0.5)
+    time.sleep(10)
 
 
 def destroy():

@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-firstM = 7
+firstM = 4
 
 
 def setup():

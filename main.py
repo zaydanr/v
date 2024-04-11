@@ -1,27 +1,54 @@
 import RPi.GPIO as GPIO
 import time
 
-firstM = 4
-
+left = 4
+middle = 27
+right = 22
 
 def setup():
   GPIO.setmode(GPIO.BCM)  # Numbers GPIOs by physical location
-  GPIO.setup(firstM, GPIO.OUT)
-  GPIO.output(firstM, GPIO.HIGH)
+  GPIO.setup(left, GPIO.OUT)
+  GPIO.setup(middle, GPIO.OUT)
+  GPIO.setup(center, GPIO.OUT)
+  GPIO.output(left, GPIO.LOW)
+  GPIO.output(middle, GPIO.LOW)
+  GPIO.output(center, GPIO.LOW)
 
 
 def loop():
   while True:
-    print('...relayd on')
-    GPIO.output(firstM, GPIO.HIGH)
+    print('...left on')
+    GPIO.output(left, GPIO.HIGH)
     time.sleep(10)
-    print('relay off...')
-    GPIO.output(firstM, GPIO.LOW)
+    print('left off...')
+    GPIO.output(left, GPIO.LOW)
+    
+    print('...middle on')
+    GPIO.output(middle, GPIO.HIGH)
     time.sleep(10)
+    print('middle off...')
+    GPIO.output(left, GPIO.LOW)
+    
+    print('...right on')
+    GPIO.output(right, GPIO.HIGH)
+    time.sleep(10)
+    print('right off...')
+    GPIO.output(left, GPIO.LOW)
 
+    print('...all on')
+    GPIO.output(right, GPIO.HIGH)
+    GPIO.output(left, GPIO.HIGH)
+    GPIO.output(middle, GPIO.HIGH)
+    time.sleep(10)
+    print('all off...')
+    GPIO.output(left, GPIO.LOW)
+    GPIO.output(middle, GPIO.LOW)
+    GPIO.output(right, GPIO.LOW)
 
 def destroy():
-  GPIO.output(firstM, GPIO.HIGH)
+  GPIO.output(left, GPIO.HIGH)
+  GPIO.output(middle, GPIO.HIGH)
+  GPIO.output(right, GPIO.HIGH)
   GPIO.cleanup()  # Release resource
 
 

@@ -9,10 +9,10 @@ def setup():
   GPIO.setmode(GPIO.BCM)  # Numbers GPIOs by physical location
   GPIO.setup(left, GPIO.OUT)
   GPIO.setup(middle, GPIO.OUT)
-  GPIO.setup(center, GPIO.OUT)
+  GPIO.setup(right, GPIO.OUT)
   GPIO.output(left, GPIO.LOW)
   GPIO.output(middle, GPIO.LOW)
-  GPIO.output(center, GPIO.LOW)
+  GPIO.output(right, GPIO.LOW)
 
 
 def loop():

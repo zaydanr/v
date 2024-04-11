@@ -1,9 +1,9 @@
 import RPi.GPIO as GPIO
 import time
 
-left = 4
+right = 4
 middle = 27
-right = 22
+left = 22
 
 def setup():
   GPIO.setmode(GPIO.BCM)  # Numbers GPIOs by physical location
@@ -27,13 +27,13 @@ def loop():
     GPIO.output(middle, GPIO.HIGH)
     time.sleep(10)
     print('middle off...')
-    GPIO.output(left, GPIO.LOW)
+    GPIO.output(middle, GPIO.LOW)
     
     print('...right on')
     GPIO.output(right, GPIO.HIGH)
     time.sleep(10)
     print('right off...')
-    GPIO.output(left, GPIO.LOW)
+    GPIO.output(right, GPIO.LOW)
 
     print('...all on')
     GPIO.output(right, GPIO.HIGH)
@@ -46,9 +46,9 @@ def loop():
     GPIO.output(right, GPIO.LOW)
 
 def destroy():
-  GPIO.output(left, GPIO.HIGH)
-  GPIO.output(middle, GPIO.HIGH)
-  GPIO.output(right, GPIO.HIGH)
+  GPIO.output(left, GPIO.LOW)
+  GPIO.output(middle, GPIO.LOW)
+  GPIO.output(right, GPIO.LOW)
   GPIO.cleanup()  # Release resource
 
 

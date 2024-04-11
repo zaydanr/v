@@ -3,7 +3,7 @@ import time
 
 right = 4
 middle = 27
-left = 22
+left = 18
 
 def setup():
   GPIO.setmode(GPIO.BCM)  # Numbers GPIOs by physical location

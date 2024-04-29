@@ -3,7 +3,7 @@ import time
 import threading
 
 kickMotor = 27
-snareMotor = 4
+snareMotor = 22
 hatMotor = 23
 
 kick_array = [0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]

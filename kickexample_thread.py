@@ -2,8 +2,8 @@ import RPi.GPIO as GPIO
 import time
 import threading
 
-kickMotor = 27
-snareMotor = 22
+kickMotor = 22
+snareMotor = 23
 hatMotor = 24
 
 kick_array = [0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
